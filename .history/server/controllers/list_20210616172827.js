@@ -80,7 +80,7 @@ module.exports.processEditPage = (req, res, next) => {
         "email": req.body.email,
         "phone": req.body.phone
     });
-    List.updateOne({_id: id}, updatedContact, (err) => {
+    List.updateOne({_id: id}, updatedContact, (er) => {
         if(err)
         {
             console.log(err);

@@ -13,7 +13,7 @@ module.exports.displayHomePage = (req, res, next) => {
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('about', { title: 'About Me'});
+    res.render('about_me', { title: 'About Me'});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {

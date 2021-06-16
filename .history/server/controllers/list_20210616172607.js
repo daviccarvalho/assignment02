@@ -29,8 +29,8 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newContact = List({
         "first_name": req.body.firstName,
-        "last_name": req.body.lastName,
-        "job_title": req.body.jobTitle,
+        "last_name": req.body.last_name,
+        "job_title": req.body.job_title,
         "company": req.body.company,
         "email": req.body.email,
         "phone": req.body.phone
@@ -73,14 +73,14 @@ module.exports.processEditPage = (req, res, next) => {
 
     let updatedContact = List({
         "_id": id,
-        "first_name": req.body.firstName,
-        "last_name": req.body.lastName,
-        "job_title": req.body.jobTitle,
+        "first_name": req.body.first_name,
+        "last_name": req.body.last_name,
+        "job_title": req.body.job_title,
         "company": req.body.company,
         "email": req.body.email,
         "phone": req.body.phone
     });
-    List.updateOne({_id: id}, updatedContact, (err) => {
+    List.updateOne({_id: id}, updatedContact, (er) => {
         if(err)
         {
             console.log(err);

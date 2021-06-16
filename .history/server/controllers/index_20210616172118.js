@@ -7,13 +7,14 @@ June 16, 2021
 
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
 
 module.exports.displayHomePage = (req, res, next) => {
     res.render('index', {title: 'Home'});
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('about', { title: 'About Me'});
+    res.render('about_me', { title: 'About Me'});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
