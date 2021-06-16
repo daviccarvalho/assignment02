@@ -7,7 +7,7 @@ let listModel = mongoose.Schema({
     job_title: String,
     company: String,
     email: String,
-    phone: String    
+    phone: String
 },
 {
     collection: "list"

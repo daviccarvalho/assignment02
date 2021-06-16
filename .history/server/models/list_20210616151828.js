@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 
 //Create a model class
 let listModel = mongoose.Schema({
+    _id: id,
     last_name: String,
     first_name: String,
     job_title: String,
