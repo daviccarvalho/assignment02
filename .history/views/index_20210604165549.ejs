@@ -1,0 +1,32 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<% if (title == "Home") { %> <%- include partials/home.ejs %>
+  <% } else { %>
+    <% if (title == "About me") { %> <%- include partials/about_me.ejs %>
+      <% } else { %>
+        <% if (title == "Projects") { %> <%- include partials/projects.ejs %>
+          <% } else { %>
+            <% if (title == "Services") { %> <%- include partials/services.ejs %>
+              <% } else { %>
+                <% if (title == "Contact me") { %> <%- include partials/contact_me.ejs %>
+        <% } %>
+      <% } %>  
+    <% } %>
+  <% } %>
+<% } %>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>

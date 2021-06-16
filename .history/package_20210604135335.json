@@ -1,0 +1,37 @@
+{
+  "name": "assignment1",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "^14.00.0",
+    "npm": "^6.0.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "bootstrap": "^5.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.6.0",
+    "morgan": "~1.9.1",
+    "popper.js": "^1.16.1"
+  },
+  "description": "Assignment 01 - COMP229 - Summer 2021",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviccarvalho/assignment01.git"
+  },
+  "author": "Davi Carvalho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daviccarvalho/assignment01/issues"
+  },
+  "homepage": "https://github.com/daviccarvalho/assignment01#readme"
+}
