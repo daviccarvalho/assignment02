@@ -18,12 +18,12 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.0",
-    "mongoose": "^5.12.14",
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
   },
   "description": "Assignment 02 - COMP229 - Summer 2021",
   "main": "server.js",
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daviccarvalho/assignment02.git"
