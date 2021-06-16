@@ -108,7 +108,7 @@ router.get('/delete/:id', (req, res, next) => {
             //Refresh the contact-list
             res.redirect('/contact-list');
         }
-    });
+    })
 });
 
 module.exports = router;

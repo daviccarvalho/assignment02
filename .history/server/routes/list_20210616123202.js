@@ -79,36 +79,11 @@ router.post('/edit/:id', (req, res, next) => {
         "email": req.body.email,
         "phone": req.body.phone
     });
-    List.updateOne({_id: id}, updateContact, (er) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            //Refresh the contact-list
-            res.redirect('/contact-list');
-        }
-    })
 });
 
 //GET Route to delete Contact List row - DELETE Operation
 router.get('/delete/:id', (req, res, next) => {
-    let id = req.params.id;
 
-    List.remove({_id: id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            //Refresh the contact-list
-            res.redirect('/contact-list');
-        }
-    });
 });
 
 module.exports = router;

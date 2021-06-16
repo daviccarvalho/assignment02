@@ -34,81 +34,22 @@ router.post('/add', (req, res, next) => {
         "company": req.body.company,
         "email": req.body.email,
         "phone": req.body.phone
-    });
-
-    List.create(newContact, (err, List) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            res.redirect('/contact-list');
-        }
-    });
+    })
 });
 
 //GET Route for displaying Edit page - UPDATE Operation
 router.get('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
 
-    List.findById(id, (err, contactToEdit) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            //Show edit view
-            res.render('contact/edit', {title: 'Contact List', contactList: contactToEdit});
-        }
-    });
 });
 
 //POST Route for processing Edit page - UPDATE Operation
 router.post('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
 
-    let updatedContact = List({
-        "first_name": req.body.first_name,
-        "last_name": req.body.last_name,
-        "job_title": req.body.job_title,
-        "company": req.body.company,
-        "email": req.body.email,
-        "phone": req.body.phone
-    });
-    List.updateOne({_id: id}, updateContact, (er) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            //Refresh the contact-list
-            res.redirect('/contact-list');
-        }
-    })
 });
 
 //GET Route to delete Contact List row - DELETE Operation
 router.get('/delete/:id', (req, res, next) => {
-    let id = req.params.id;
 
-    List.remove({_id: id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            //Refresh the contact-list
-            res.redirect('/contact-list');
-        }
-    });
 });
 
 module.exports = router;
