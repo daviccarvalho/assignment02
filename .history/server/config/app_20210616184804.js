@@ -54,7 +54,7 @@ app.use(session({
 }));
 
 //Initialize flash
-app.use(flash());
+applicationCache.use(flash());
 
 //Initialize passport
 app.use(passport.initialize());
@@ -68,8 +68,10 @@ let userModel = require('../models/user');
 let User = userModel.User;
 
 //Serialize and deserialize the User Info
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

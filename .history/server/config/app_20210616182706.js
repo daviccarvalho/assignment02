@@ -48,29 +48,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-//Setup Express Session
-app.use(session({
-  secret: "SomeSecret", saveUninitialized: false, resave: false
-}));
-
-//Initialize flash
-app.use(flash());
-
-//Initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-//Passport user config
-
-
-//Create a user model instance
-let userModel = require('../models/user');
-let User = userModel.User;
-
-//Serialize and deserialize the User Info
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contact-list', listRouter);

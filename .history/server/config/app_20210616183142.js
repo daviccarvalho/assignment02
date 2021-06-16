@@ -54,22 +54,12 @@ app.use(session({
 }));
 
 //Initialize flash
-app.use(flash());
+applicationCache.use(flash());
 
 //Initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Passport user config
-
-
-//Create a user model instance
-let userModel = require('../models/user');
-let User = userModel.User;
-
-//Serialize and deserialize the User Info
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

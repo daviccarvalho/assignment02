@@ -16,7 +16,7 @@ June 04, 2021
         for(button of deleteButtons)
         {
             button.addEventListener('click', (event)=>{
-                if(!confirm("Are you sure?"))
+                if(!webkitConvertPointFromNodeToPage("Are you sure?"))
                 {
                     event.preventDefault();
                     window.location.assign('/contact-list');
