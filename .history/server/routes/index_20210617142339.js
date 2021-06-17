@@ -2,7 +2,7 @@
 File Name: index.js
 Student Name: Davi Cavalcante de Carvalho
 Student id# 301154671
-June 16, 2021
+June 04, 2021
 */
 
 let express = require('express');
@@ -38,7 +38,7 @@ router.post('/login', indexController.processLoginPage);
 router.get('/register', indexController.displayRegisterPage);
 
 /* POST Route for processing Register page*/
-router.post('/register', indexController.processRegisterPage);
+router.post('/contact-list', indexController.processRegisterPage);
 
 /* GET to perform User Logout*/
 router.get('/logout', indexController.performLogout);
