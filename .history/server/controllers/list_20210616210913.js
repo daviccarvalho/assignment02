@@ -22,7 +22,7 @@ module.exports.displayContactList = (req, res, next) => {
 
 //GET Route for displaying Add page - CREATE Operation
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('contact/add', {title: 'Add Contact', displayName: req.user ? req.user.displayName : ''});
+    res.render('contact/add', {title: 'Add Contact'});
 };
 
 //POST Route for processing Add page - CREATE operation
@@ -62,7 +62,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //Show edit view
-            res.render('contact/edit', {title: 'Contact List', contactList: contactToEdit, displayName: req.user ? req.user.displayName : ''});
+            res.render('contact/edit', {title: 'Contact List', contactList: contactToEdit, ContactList: contactList, displayName: req.user ? req.user.displayName : ''});
         }
     });
 };

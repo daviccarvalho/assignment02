@@ -17,7 +17,6 @@ function requireAuth(req, res, next)
     {
         return res.redirect('/login');
     }
-    next();
 }
 
 /* GET Route for Contact List page - READ Operation */

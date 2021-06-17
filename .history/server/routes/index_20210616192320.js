@@ -9,6 +9,7 @@ let express = require('express');
 let router = express.Router();
 
 let indexController = require('../controllers/index');
+let contactListController = require('../controllers/list');
 
 /* GET home page. */
 router.get('/', indexController.displayHomePage);
@@ -29,18 +30,18 @@ router.get('/services', indexController.displayServicesPage);
 router.get('/contact', indexController.displayContactPage);
 
 /* GET Route for displaying Login page*/
-router.get('/login', indexController.displayLoginPage);
+router.get('/login', contactListController.displayAddPage);
 
 /* POST Route for processing Login page*/
-router.post('/login', indexController.processLoginPage);
+router.post('/login', contactListController.processAddPage);
 
 /* GET Route for displaying Register page*/
-router.get('/register', indexController.displayRegisterPage);
+router.get('/register', contactListController.displayAddPage);
 
 /* POST Route for processing Register page*/
-router.post('/register', indexController.processRegisterPage);
+router.post('/register', contactListController.processAddPage);
 
 /* GET to perform User Logout*/
-router.get('/logout', indexController.performLogout);
+router.get('/logout', contactListController.performDelete);
 
 module.exports = router;

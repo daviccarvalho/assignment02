@@ -9,33 +9,32 @@ let passport = require('passport');
 
 let contactListController = require('../controllers/list');
 
-//Require authentications whenever changing the DB
+//Helper function for guard purposes
 function requireAuth(req, res, next)
 {
     //check if the user is logged in
-    if(!req.isAuthenticated())
+    if(!req.isAuthenticated()
     {
         return res.redirect('/login');
-    }
-    next();
+    })
 }
 
 /* GET Route for Contact List page - READ Operation */
 router.get('/', contactListController.displayContactList);
 
 /* GET Route for displaying Add page - CREATE Operation */
-router.get('/add', requireAuth, contactListController.displayAddPage);
+router.get('/add', contactListController.displayAddPage);
 
 /* POST Route for processing Add page - CREATE Operation */
-router.post('/add', requireAuth, contactListController.processAddPage);
+router.post('/add', contactListController.processAddPage);
 
 /* GET Route for displaying Edit page - UPDATE Operation */
-router.get('/edit/:id', requireAuth, contactListController.displayEditPage);
+router.get('/edit/:id', contactListController.displayEditPage);
 
 /* POST Route for processing Edit page - UPDATE Operation */
-router.post('/edit/:id', requireAuth, contactListController.processEditPage);
+router.post('/edit/:id', contactListController.processEditPage);
 
 /* GET to perform Deletion - DELETE Operation */
-router.get('/delete/:id', requireAuth, contactListController.performDelete);
+router.get('/delete/:id', contactListController.performDelete);
 
 module.exports = router;

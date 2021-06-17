@@ -22,7 +22,7 @@ module.exports.displayContactList = (req, res, next) => {
 
 //GET Route for displaying Add page - CREATE Operation
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('contact/add', {title: 'Add Contact', displayName: req.user ? req.user.displayName : ''});
+    res.render('contact/add', {title: 'Add Contact'});
 };
 
 //POST Route for processing Add page - CREATE operation

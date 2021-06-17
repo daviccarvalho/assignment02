@@ -35,12 +35,12 @@ router.get('/login', indexController.displayLoginPage);
 router.post('/login', indexController.processLoginPage);
 
 /* GET Route for displaying Register page*/
-router.get('/register', indexController.displayRegisterPage);
+router.get('/register', indexController.displayAddPage);
 
 /* POST Route for processing Register page*/
-router.post('/register', indexController.processRegisterPage);
+router.post('/register', indexController.processAddPage);
 
 /* GET to perform User Logout*/
-router.get('/logout', indexController.performLogout);
+router.get('/logout', indexController.performDelete);
 
 module.exports = router;

@@ -16,23 +16,23 @@ let userModel = require('../models/user');
 let User = userModel.User;
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
+    res.render('index', {title: 'Home'});
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('about', { title: 'About Me', displayName: req.user ? req.user.displayName : ''});
+    res.render('about', { title: 'About Me'});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('projects', { title: 'Projects', displayName: req.user ? req.user.displayName : ''});
+    res.render('projects', { title: 'Projects'});
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('services', { title: 'Services', displayName: req.user ? req.user.displayName : ''});
+    res.render('services', { title: 'Services'});
 }
 
 module.exports.displayContactPage = (req, res, next) => {
-    res.render('contact', { title: 'Contact Me', displayName: req.user ? req.user.displayName : ''});
+    res.render('contact', { title: 'Contact Me'});
 }
 
 //Export display login page
@@ -79,7 +79,7 @@ module.exports.processLoginPage = (req, res, next) => {
     })(req, res, next);
 }
 
-//Export display register page
+//Export display process page
 
 module.exports.displayRegisterPage = (req, res, next) => {
     if(!req.user)
@@ -91,56 +91,4 @@ module.exports.displayRegisterPage = (req, res, next) => {
             displayName: req.user ? req.user.displayName : ''
         });
     }
-    else
-    {
-        return res.redirect('/');
-    }
-}
-
-//Export process register page
-
-module.exports.processRegisterPage = (req, res, next) => {
-    //Instantiate a user object
-    let newUser = new User({
-        username: req.body.password,
-        //password: req.body.password,
-        email: req.body.email,
-        displayName: req.body.displayName
-    });
-
-    User.register(newUser, req.body.password, (err) => {
-        if(err)
-        {
-            console.log("error: Inserting New User");
-            if(err.name = "UserExistsError")
-            {
-                req.flash(
-                    'registerMessage',
-                    'Registration Error: User Already Exists!'
-                );
-                console.log('Error: User Already Exists"')
-            }
-            return res.render('auth/register',
-            {
-                title: 'Register',
-                messages: req.flash('registerMessage'),
-                displayName: req.user ? req.user.displayName : ''
-            });
-        }
-        else
-        {
-            //If there is no error, registration is successful
-            //Redirects to user authentication
-
-            return passport.authenticate('local')(req, res, () => {
-                res.redirect('/book-list')
-            });
-        }
-    });
-}
-
-//Export logout
-module.exports.performLogout = (req, res, next) => {
-    req.logout();
-    res.redirect('/');
 }

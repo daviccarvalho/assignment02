@@ -28,19 +28,10 @@ router.get('/services', indexController.displayServicesPage);
 /* GET Contact Us page. */
 router.get('/contact', indexController.displayContactPage);
 
-/* GET Route for displaying Login page*/
-router.get('/login', indexController.displayLoginPage);
+/* GET Route for displaying Login page - CREATE Operation */
+router.get('/add', contactListController.displayAddPage);
 
-/* POST Route for processing Login page*/
-router.post('/login', indexController.processLoginPage);
-
-/* GET Route for displaying Register page*/
-router.get('/register', indexController.displayRegisterPage);
-
-/* POST Route for processing Register page*/
-router.post('/register', indexController.processRegisterPage);
-
-/* GET to perform User Logout*/
-router.get('/logout', indexController.performLogout);
+/* POST Route for processing Login page - CREATE Operation */
+router.post('/add', contactListController.processAddPage);
 
 module.exports = router;
