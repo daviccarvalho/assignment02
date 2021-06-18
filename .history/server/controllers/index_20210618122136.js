@@ -90,15 +90,13 @@ module.exports.processLoginPage = (req, res, next) => {
             const authToken = jwt.sign(payload, DB.Secret,{
                 expiresIn: 604800 //1week
             });
-            
-            /* TODO Getting ready for API
+
             res.json({success: true, msg: 'User logged in', user:{
                 id: user._id,
                 displayName: user.displayName,
                 user: user.username,
                 email: user.email
             }, token: authToken});
-            */
 
             return res.redirect('/contact-list');
         });
@@ -115,7 +113,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
         displayName: req.user ? req.user.displayName : ''
     });
 }
-/*
+
 //Save code for future
 module.exports.displayRegisterPage = (req, res, next) => {
     if(!req.user)
@@ -129,9 +127,9 @@ module.exports.displayRegisterPage = (req, res, next) => {
     }
     else
     {
-        return res.redirect('/register');
+        return res.redirect('/');
     }
-}*/
+}
 
 //Export process register page
 
@@ -167,10 +165,6 @@ module.exports.processRegisterPage = (req, res, next) => {
         {
             //If there is no error, registration is successful
             //Redirects to user authentication
-
-            /* TODO Getting ready for API
-            res.json({success: true, msg: 'User created'});
-            */
 
             return res.redirect('/');
             /*return passport.authenticate('local')(req, res, () => {

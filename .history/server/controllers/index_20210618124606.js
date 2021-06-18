@@ -115,7 +115,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
         displayName: req.user ? req.user.displayName : ''
     });
 }
-/*
+
 //Save code for future
 module.exports.displayRegisterPage = (req, res, next) => {
     if(!req.user)
@@ -129,9 +129,9 @@ module.exports.displayRegisterPage = (req, res, next) => {
     }
     else
     {
-        return res.redirect('/register');
+        return res.redirect('/auth/register');
     }
-}*/
+}
 
 //Export process register page
 

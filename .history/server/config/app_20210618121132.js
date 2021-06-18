@@ -82,7 +82,7 @@ let jwtOptions = {};
 jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = DB.Secret;
 
-let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
+let strategu = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
   User.findById(jwt_payload.id)
   .then(user=> {
     return done(null, user);
@@ -92,9 +92,6 @@ let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
   });
 });
 
-passport.use(strategy);
-
-//Routing commands
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contact-list', listRouter);

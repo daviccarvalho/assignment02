@@ -94,7 +94,6 @@ let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
 
 passport.use(strategy);
 
-//Routing commands
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contact-list', listRouter);
