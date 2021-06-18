@@ -1,0 +1,82 @@
+<!--
+File Name: index.js
+Student Name: Davi Cavalcante de Carvalho
+Student id# 301154671
+June 16, 2021
+-->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!--Main content-->
+<main>
+<div class="container">
+    <div class="row">
+  
+        <div class="offset-md-3 col-md-4">
+        <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+
+                <div class="form-group">
+                    <label for="lastNameTextField">Last Name</label>
+                    <input type="text" class="form-control" id="lastNameTextField" placeholder="Enter last name" name="lastName"
+                    value=" <%= contactList.last_name %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstNameTextField">First Name</label>
+                    <input type="text" class="form-control" id="firstNameTextField" placeholder="Enter first name" name="firstName"
+                    value=" <%= contactList.first_name %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="jobTitleTextField">Job Title</label>
+                    <input type="text" class="form-control" id="jobTitleTextField" placeholder="Enter job title" name="jobTitle"
+                    value=" <%= contactList.job_title %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="companyTextField">Company</label>
+                    <input type="text" class="form-control" id="companyTextField" placeholder="Enter company's name" name="company"
+                    value=" <%= contactList.company %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailTextField">E-mail</label>
+                    <input type="text" class="form-control" id="emailTextField" placeholder="Enter e-mail" name="email"
+                    value=" <%= contactList.email %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumberTextField">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumberTextField" placeholder="Enter phone number" name="phone"
+                    value=" <%= contactList.phone %>"
+                    required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                <a href="/contact-list" class="btn btn-warning">
+                <i class="fas fa-undo"></i> Cancel</a>
+
+                <a href="/contact-list/delete/_id" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-alt"></i> Delete</a>
+              
+            </form><br>
+        </div>
+
+    </div>
+</div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>
