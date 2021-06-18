@@ -1,0 +1,67 @@
+<!--
+File Name: index.js
+Student Name: Davi Cavalcante de Carvalho
+Student id# 301154671
+June 16, 2021
+-->
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!--Main content-->
+
+<main>
+<div class="container pb-3 pt-3">
+    <div class="row">
+  
+        <div class="offset-md-3 col-md-4">
+
+            <form class="form" class="needs-validation mx-auto w-50" novalidate method="POST">
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control" id="lastNameTextField" placeholder="Enter last name" name="lastName" required>
+                    <label for="lastNameTextField">Last Name</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control" id="firstNameTextField" placeholder="Enter first name" name="firstName" required>
+                    <label for="firstNameTextField">First Name</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control" id="jobTitleTextField" placeholder="Enter job title" name="jobTitle" required>
+                    <label for="jobTitleTextField">Job Title</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control" id="companyTextField" placeholder="Enter company's name" name="company" required>
+                    <label for="companyTextField">Company</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control" id="emailTextField" placeholder="Enter e-mail" name="email" required>
+                    <label for="emailTextField">E-mail</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control" id="phoneNumberTextField" placeholder="Enter phone number" name="phone" required>
+                    <label for="phoneNumberTextField">Phone Number</label>
+                </div>
+
+                <div class="form-group text-right pt-3">
+                <button class="w-100 btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                    <a href="/contact-list" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
+                </div>
+            </form>
+        <br>
+        </div>
+
+    </div>
+</div>
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>

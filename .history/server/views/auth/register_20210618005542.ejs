@@ -1,0 +1,86 @@
+<!--
+File Name: index.js
+Student Name: Davi Cavalcante de Carvalho
+Student id# 301154671
+June 16, 2021
+-->
+
+<!--I kept this page to easier add users to DB. However I know it is
+possible to add users directly to Mongo Atlas page. I also hid the link
+to this page, and even if the end-user types in, this page is password protected.-->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!--Register content-->
+<main class="container pb-3 pt-3">
+
+<!--Message area-->
+<%if(messages.length > 0) {%>
+    <div class="div alert-danger">
+        <%= messages %>
+    </div>
+    <% } %>
+
+<div class="mx-auto row w-50">
+    <h1 class="h3 mb-3 text-center fw-normal">Please register</h1>
+    <div>
+        <form method="POST" class="needs-validation mx-auto w-100" novalidate autocomplete="off">
+            <fieldset class="form-group form-floating">
+                <input type="text" 
+                    class="form-control" 
+                    name="username" 
+                    placeholder="Enter username" 
+                    id="username" 
+                required autofocus>
+                <label for="username">Username:</label>
+            </fieldset>
+
+            <fieldset class="form-group form-floating">
+                <input type="password" 
+                    class="form-control" 
+                    name="password" 
+                    placeholder="Enter password" 
+                    id="password" 
+                required>
+                <label for="password">Password:</label>
+            </fieldset>
+
+            <fieldset class="form-group form-floating">
+                <input type="email" 
+                    class="form-control" 
+                    name="email" 
+                    placeholder="Enter e-mail address" 
+                    id="email" 
+                required>
+                <label for="email">E-mail:</label>
+            </fieldset>
+
+            <fieldset class="form-group form-floating">
+                <input type="text" 
+                    class="form-control" 
+                    name="displayName" 
+                    placeholder="Enter display name" 
+                    id="displayName" 
+                required>
+                <label for="displayName">Display Name:</label>
+            </fieldset>
+
+            <fieldset class="form-group text-right pt-3">
+                <input type="submit" class="btn btn-primary w-50" value="Register">
+                <div class="pt-2">
+                <a href="/">
+                    <input type="button" class="btn btn-secondary w-50" value="Cancel">
+                </div>
+            </fieldset>
+
+        </form>
+    </div>
+</div>
+  
+</main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>

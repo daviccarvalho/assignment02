@@ -1,0 +1,103 @@
+<!--
+File Name: index.js
+Student Name: Davi Cavalcante de Carvalho
+Student id# 301154671
+June 16, 2021
+-->
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<!--Main content-->
+<main class="container pb-3 pt-3">
+  <div>
+    <div class="w-75 p-3 pb-3 mx-auto">
+      <div class="card float-start" style="width: 18rem;">
+        <img src="/Assets/images/qr_code.png" class="img-fluid" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Contact</h5>
+          <p class="card-text">Phone: +55.98.981.574.273<br>
+          <a href="mailto: daviccarvalho@gmail.com">daviccarvalho@gmail.com<br></a>
+          <a href="https://www.linkedin.com/in/davi-carvalho-58bb2a183/">LinkedIn</a><br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+<div class="row">
+  <h5>Do you want to get in touch with me? Please, inform your contacts and a brief description of what you need. I will answer as soon as possible.<h5>
+</div>
+
+  <form class="row g-3 needs-validation" novalidate action="/home">
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Name</label>
+      <input name="fullName" type="text" class="form-control" id="validationCustom01" value="John Doe" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Phone Number</label>
+      <input name="phoneNumber" type="text" class="form-control" id="validationCustom02" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="exampleInputEmail1" class="form-label">E-mail</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input name="emailInput" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        <div class="invalid-feedback">
+          Please choose a valid e-mail.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input name="cityName" type="text" class="form-control" id="validationCustom03" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select name="province" class="form-select" id="validationCustom04" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="AB">AB</option>
+        <option value="BC">BC</option>
+        <option value="MB">MB</option>
+        <option value="NB">NB</option>
+        <option value="NS">NS</option>
+        <option value="NL">NL</option>
+        <option value="ON">ON</option>
+        <option value="PE">PE</option>
+        <option value="QC">QC</option>
+        <option value="SK">SK</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Zip</label>
+      <input name="zipCode" type="text" class="form-control" id="validationCustom05" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-10">
+      <label for="validationCustom06" class="form-label">Brief description</label>
+      <textarea name="textArea" type="text" class="form-control" id="validationCustom06" required>
+      </textarea>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+</div>
+</main>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>
